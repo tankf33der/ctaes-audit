@@ -14,3 +14,5 @@ interp: c mike
 	ccomp -interp -quiet mike.c
 c:
 	rm -rf mike.c *.o *.out
+
+## frama-c -eva -eva-precision 11 -memexec-all -val-builtins-auto -main audit -machdep x86_16 *.c

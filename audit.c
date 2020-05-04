@@ -9,12 +9,12 @@ typedef uint8_t u8;
 
 void audit(void) {
     ARRAY(key, 16);
-    ARRAY(plain, 16);
-    ARRAY(txt,   16);
-    ARRAY(dec,   16);
+    ARRAY(txt, 16);
+    ARRAY(cip, 16);
+    ARRAY(dec, 16);
     AES128_ctx ctx;
 
     AES128_init(&ctx, key);
-    AES128_encrypt(&ctx, 1, ciphered, plain);
-    AES128_decrypt(&ctx, 1, deciphered, cipher);
+    AES128_encrypt(&ctx, 1, cip, txt);
+    AES128_decrypt(&ctx, 1, dec, cip);
 }
